@@ -1,0 +1,9 @@
+<h1>Restaurants:</h1>
+<%= link_to "Add restaurant", new_restaurant_path %>
+
+<% @restaurants.each do |restaurant| %>
+  <%= link_to restaurant_path(restaurant) do %>
+    <h3><%= restaurant.name %></h3>
+  <% end %>
+  <%= link_to "-", restaurant_path(restaurant),data: {turbo_method: :delete}  %>
+<% end %>
